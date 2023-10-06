@@ -12,7 +12,7 @@ ${Kategory Makeup}    xpath:/html/body/div[1]/div[2]/div/div[1]/div/div/div/div[
 ${Makeup Subkategory = Eyeshadow}    xpath:/html/body/div[1]/div[2]/div/div[1]/div/div/div/div[1]/div[2]/ul/li[2]/div/div/div/div/ul/li[1]/a
 ${Halaman Eyeshadow}    xpath:/html/body/div[2]/div[3]/div/div/div[2]/div[1]/div[1]/h1
 # ${Product SURREAL Star Loose Pigment}    xpath://html/body/div[2]/div[3]/div/div/div[2]/div[2]/div/div[4]/div/a/img[@title='${Nama Produk}']
-${Halaman SURREAL Star Loose Pigment}    xpath:/html/body/div[2]/div[1]/div[1]/div[2]/div/div[3]/div/h1
+${Halaman Produk}    xpath:/html/body/div[2]/div[1]/div[1]/div[2]/div/div[3]/div/h1
 
 ${Kategory}
 *** Keywords ***
@@ -49,7 +49,7 @@ Klik SURREAL Star Loose Pigment
     # ${Klik Produk}    Set Variable    xpath://html/body/div[2]/div[3]/div/div/div[2]/div[2]/div/div[4]/div/a/img[@title='${nama product}']
     ${Klik Produk}    Set Variable    xpath://img[@title='${nama product}']
     Click Element    ${Klik Produk}
-    Element Should Be Visible    ${Halaman SURREAL Star Loose Pigment}
+    Element Should Be Visible    ${Halaman Produk}
 
 Cari Produk
     [Arguments]    ${nama kategory}    ${nama sub kategory}    ${nama product}
@@ -57,3 +57,4 @@ Cari Produk
     Posisi Mouse di Katogori    ${nama kategory}
     Klik Subkategory    ${nama sub kategory}
     Klik SURREAL Star Loose Pigment    ${nama product}
+    Capture Element Screenshot    ${Halaman Produk}
